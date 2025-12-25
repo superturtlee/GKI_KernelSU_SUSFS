@@ -538,6 +538,7 @@ jobs:
           
           # Remove check_defconfig
           sed -i 's/check_defconfig//' ./common/build.config.gki
+          sed -i 's/trim_nonlisted_kmi = True,/trim_nonlisted_kmi = False,/' ./common/BUILD.bazel
 
       - name: 配置内核名称
         run: |
