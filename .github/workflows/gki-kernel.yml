@@ -526,6 +526,7 @@ jobs:
           
           # Remove check_defconfig
           sed -i 's/check_defconfig//' ./common/build.config.gki
+          sed -i '/check_defconfig = /d' ./common/BUILD.bazel
           sed -i 's/trim_nonlisted_kmi = True,/trim_nonlisted_kmi = False,\n    check_defconfig = "disabled",/' ./common/BUILD.bazel
 
       - name: 配置内核名称
